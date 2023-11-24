@@ -3,6 +3,8 @@ from enum import Enum
 
 class Toaster:
 
+    STATUS = "status"
+
     def __init__(self, toaster_id):
         self.id = toaster_id
         self.status = ToasterStatus.IDLE

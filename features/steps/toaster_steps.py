@@ -16,7 +16,7 @@ def step_impl(context):
     context.device_wrangler = DeviceWrangler(pool)
 
 
-@when("it receives a request for {bread_type} bread at level {toast_level:d}")
+@step("it receives a request for {bread_type} bread at level {toast_level:d}")
 def step_impl(context, bread_type, toast_level):
     context.device_wrangler.send(context.toaster_id, bread_type=bread_type, toast_level=toast_level)
 
@@ -42,14 +42,6 @@ def step_impl(context):
     :type context: behave.runner.Context
     """
     raise NotImplementedError(u'STEP: Then a wait response is sent')
-
-
-@step("it receives a request for wheat bread at level 3")
-def step_impl(context):
-    """
-    :type context: behave.runner.Context
-    """
-    raise NotImplementedError(u'STEP: And it receives a request for wheat bread at level 3')
 
 
 @when("it completes toasting")
